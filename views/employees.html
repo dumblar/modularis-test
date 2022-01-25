@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="employeesList">
+        <h3>Employees</h3>
+        <div class="table-container">
+            <div class="buttons">
+                <button class="btn rigth" onclick="newEmployee()">NEW EMPLOYEE</button>
+            </div>
+            <table id="lstEmployees">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>STATUS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="newEmployee" class="hidden">
+        <h3 id="employeeTitle">Employees</h3>
+        <div class="table-container">
+            <div class="form">
+                <div class="itemGroup">
+                    <label for="firstName">FIRST NAME</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+                <div class="itemGroup">
+                    <label for="lastName">LAST NAME</label>
+                    <input type="text" id="lastName" name="lastName">
+                </div>
+                <div class="itemGroup full">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" name="id">
+                </div>
+                <div class="itemGroup">
+                    <label for="active">ACTIVE <input type="checkbox" id="active" name="active"></label>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn-link" onclick="newEmployee()">CANCEL</button>
+                <button class="btn rigth" onclick="saveEmployee()">SAVE</button>
+            </div>
+        </div>
+    </div>
+    <div id="tryDelete" class="hidden ">
+        <div class="tryDelete">
+            <div class="question">
+                <div class="question-title">
+                    <i class="fas fa-exclamation-triangle question-icon"></i>
+                    <p>Are you sure you want to remove this employee?</p>
+    
+                </div>
+                <div class="buttons">
+                    <button class="btn-link" onclick="cancelDeleteEmployee()">CANCEL</button>
+                    <button class="btn btn-danger" onclick="deleteEmployee()">YES, REMOVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../viewmodels/employeesViewModel.js"></script>
+
+</html>
